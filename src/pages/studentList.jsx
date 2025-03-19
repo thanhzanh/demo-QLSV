@@ -4,7 +4,7 @@ import Table from "react-bootstrap/Table";
 import moment from 'moment';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
-import AddStudent from "./AddStudent";
+import AddStudent from './addStudent';
 
 const StudentList = () => {
     const [students, setStudents] = useState([]);
