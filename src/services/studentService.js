@@ -11,11 +11,11 @@ export const addStudent = async (student) => {
     await axios.post(API_URL, student); 
 };
 
-export const deleteStudent = async (ma_sv) => {
-    await axios.delete(`${API_URL}/${ma_sv}`);
+export const deleteStudent = async (id) => {
+    await axios.delete(`${API_URL}/${id}`);
 };
 
-export const updateStudent = async (ma_sv, student) => {
-    const response = await axios.put(`${API_URL}/${ma_sv}`, student);
+export const updateStudent = async (id, student) => {
+    const response = await axios.put(`${API_URL}/${id}`, student);
     return response.data;
 }

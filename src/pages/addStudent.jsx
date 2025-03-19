@@ -46,9 +46,9 @@ const AddStudent = ({ show, handleClose, reloadData, selectedStudent }) => {
 
         try {
             if (selectedStudent) {
-                await axios.put(`https://67da20eb35c87309f52b0f6e.mockapi.io/students/${student.ma_sv}`, student);
+                await axios.put(`https://67da20eb35c87309f52b0f6e.mockapi.io/students/${student.id}`, student);
             } else {
-                await axios.post("https://67da20eb35c87309f52b0f6e.mockapi.io/students", student);
+                await axios.post("http://localhost:5000/api/students", student);
             }
 
             handleClose(); // Đóng form sau khi thêm/sửa
