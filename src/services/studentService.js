@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/students";
+const API_URL = "https://67da20eb35c87309f52b0f6e.mockapi.io/students";
 
 export const getAllStudents = async () => {
     const response = await axios.get(API_URL);
@@ -8,7 +8,7 @@ export const getAllStudents = async () => {
 };
 
 export const addStudent = async (student) => {
-    await axios.post(API_URL, student);
+    await axios.post(API_URL, student); 
 };
 
 export const deleteStudent = async (ma_sv) => {
