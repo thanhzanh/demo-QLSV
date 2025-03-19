@@ -5,6 +5,7 @@ import axios from "axios";
 
 const AddStudent = ({ show, handleClose, reloadData, selectedStudent }) => {
     const [student, setStudent] = useState({
+        id: "",
         ma_sv: "",
         ho_ten: "",
         ngay_sinh: "",
@@ -19,6 +20,7 @@ const AddStudent = ({ show, handleClose, reloadData, selectedStudent }) => {
             setStudent(selectedStudent);
         } else {
             setStudent({
+                id: "",
                 ma_sv: "",
                 ho_ten: "",
                 ngay_sinh: "",
@@ -43,12 +45,13 @@ const AddStudent = ({ show, handleClose, reloadData, selectedStudent }) => {
             setError("Vui lòng nhập đầy đủ thông tin!");
             return;
         }
-
+        console.log(student.id);
         try {
+            
             if (selectedStudent) {
                 await axios.put(`https://67da20eb35c87309f52b0f6e.mockapi.io/students/${student.id}`, student);
             } else {
-                await axios.post("http://localhost:5000/api/students", student);
+                await axios.post("https://67da20eb35c87309f52b0f6e.mockapi.io/students", student);
             }
 
             handleClose(); // Đóng form sau khi thêm/sửa

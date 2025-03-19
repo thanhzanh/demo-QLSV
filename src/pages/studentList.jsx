@@ -29,9 +29,9 @@ const StudentList = () => {
     };
 
     // Xóa sinh viên
-    const handleDelete = async (ma_sv) => {
+    const handleDelete = async (id) => {
         if (window.confirm("Bạn có muốn xóa sinh viên này?")) {
-            await deleteStudent(ma_sv);
+            await deleteStudent(id);
             loadStudents();
         }
     };
@@ -67,7 +67,7 @@ const StudentList = () => {
                 </thead>
                 <tbody>
                     {students.map((student) => (
-                        <tr key={student.ma_sv}>
+                        <tr key={student.id}>
                             <td>{student.ma_sv}</td>
                             <td>{student.ho_ten}</td>
                             <td>{moment(student.ngay_sinh).format('DD-MM-YYYY')}</td>
@@ -78,7 +78,7 @@ const StudentList = () => {
                                 <button className="btn btn-warning btn-sm mx-1" onClick={() => handleUpdate(student)}>
                                     <FontAwesomeIcon icon={faEdit} /> Sửa
                                 </button>
-                                <button className="btn btn-danger btn-sm" onClick={() => handleDelete(student.ma_sv)}>
+                                <button className="btn btn-danger btn-sm" onClick={() => handleDelete(student.id)}>
                                     <FontAwesomeIcon icon={faTrash} /> Xóa
                                 </button>
                             </td>
